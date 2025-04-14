@@ -35,7 +35,7 @@ kind delete cluster --name <our_kind_k82_cluster_name>
 3. Cluster information 
 
 ```shell
-kubectl cluster-info --context <our_k8s_cluster_name>
+kubectl cluster-info --context <our_kind_k8s_cluster_name>
 ```
 
 
