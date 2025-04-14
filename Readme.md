@@ -2,7 +2,7 @@
 
 The process of lunching the `kubernetes` IN `docker`, this is technique is named `K-IN-D` kind.
 
-## `shell command`
+## `KIND shell command`
 	
 1. Create a cluster according to config.yml
 		
@@ -32,12 +32,22 @@ Creating cluster "ignius-k8s-cluster" ...
 kind delete cluster --name <our_kind_k82_cluster_name>
 ```
 
-3. Cluster information 
+## `Kubectl command`
+
+- `control-plane` node -> master-node
+- `woker` node -> worker nodes
+
+1. Cluster information 
 
 ```shell
 kubectl cluster-info --context <our_kind_k8s_cluster_name>
 ```
 
+2. Get nodes information 
+
+```shell
+kubectl get nodes
+```
 
 
 
