@@ -29,7 +29,7 @@ Creating cluster "ignius-k8s-cluster" ...
 2. Delete a kind cluster
 
 ```shell
-kind delete cluster --name <our_kind_k82_cluster_name>
+kind delete cluster --name <our_kind_k8s_cluster_name>
 ```
 
 ## `Kubectl command`
@@ -45,7 +45,8 @@ kubectl cluster-info --context <our_kind_k8s_cluster_name>
 
 2. Get nodes information 
 
-```shell
+```shell]
+# get all info
 kubectl get nodes
 ```
 
