@@ -9,7 +9,7 @@ kubectl get namespaces
 ```
 Result:
 ```
-➜  kind-k8s-cluster kubectl get namespaces
+➜  kubectl get namespaces
 NAME                 STATUS   AGE
 default              Active   2m43s
 kube-node-lease      Active   2m43s
@@ -33,7 +33,7 @@ kubectl get pods -n kube-system # list all the pods from kube-system namespace
 ```
 Result: 
 ```
-➜  kind-k8s-cluster kubectl get pods -n kube-system
+➜  kubectl get pods -n kube-system
 NAME                                                       READY   STATUS    RESTARTS   AGE
 coredns-668d6bf9bc-7dwfm                                   1/1     Running   0          13m
 coredns-668d6bf9bc-9kqhl                                   1/1     Running   0          13m
@@ -50,4 +50,29 @@ kube-proxy-d8fx5                                           1/1     Running   0  
 kube-proxy-vc5lv                                           1/1     Running   0          13m
 kube-scheduler-ignius-k8s-cluster-control-plane            1/1     Running   0          13m
 ```
+
+## 4. To lunch a container within a pod
+```sh
+kubectl run <container/pod_name> --image=<pod_container_image>
+```
+Example:
+```sh
+# lunch a pod
+➜  kubectl run nginx --image=nginx
+pod/nginx create
+
+# list pods
+➜  kubectl get pods
+NAME    READY   STATUS    RESTARTS   AGE
+nginx   1/1     Running   0          56s
+```
+
+
+
+
+
+
+
+
+
 
