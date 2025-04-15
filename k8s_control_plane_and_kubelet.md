@@ -108,6 +108,9 @@ pod/nginx created
 
 ```
 
+# 7. manifest yml file configuration
+Whole k8s `control_plane`, `pods` and `other overall settings of k8s cluster` can be setup completely
+under a yml file of configuration name `manifest.yml`
 
 
 
