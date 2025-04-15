@@ -52,3 +52,4 @@ kubectl get nodes
 
 
 
+# to learn more about about pod : refer repo -> K8s-Pod-AutoScaling-AutoHealing-Deployment
