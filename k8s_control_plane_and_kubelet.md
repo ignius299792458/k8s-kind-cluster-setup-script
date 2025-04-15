@@ -51,7 +51,7 @@ kube-proxy-vc5lv                                           1/1     Running   0  
 kube-scheduler-ignius-k8s-cluster-control-plane            1/1     Running   0          13m
 ```
 
-## 4. To lunch a container within a pod
+## 4. To lunch a pod
 ```sh
 kubectl run <container/pod_name> --image=<pod_container_image>
 ```
@@ -67,6 +67,21 @@ NAME    READY   STATUS    RESTARTS   AGE
 nginx   1/1     Running   0          56s
 ```
 
+## 5. To delete a pod
+if pod is mislunched in a wrong namespace or anything, we can delete as 
+```sh
+kubectl delete pod <pod_name>
+```
+Example
+```sh
+# let check if our pod is properly lunched under a required namespace if not delete
+➜  kubectl get pods -n nginx
+No resources found in nginx namespace.
+
+# Since there is no nginx pod in namespace, so delete it
+➜  kubectl delete pod nginx
+pod "nginx" deleted
+```
 
 
 
