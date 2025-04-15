@@ -31,7 +31,7 @@ kubectl get pods -n <kube_namespace_type_name>
 # or as example
 kubectl get pods -n kube-system # list all the pods from kube-system namespace
 ```
-Result: 
+Example: 
 ```
 ➜  kubectl get pods -n kube-system
 NAME                                                       READY   STATUS    RESTARTS   AGE
@@ -52,11 +52,12 @@ kube-scheduler-ignius-k8s-cluster-control-plane            1/1     Running   0  
 ```
 
 ## 4. To lunch a pod
+This is the way of lunching a pod in defult way. To lunch a pod under certain namespace see point 6.
 ```sh
 kubectl run <container/pod_name> --image=<pod_container_image>
 ```
 Example:
-```sh
+```
 # lunch a pod
 ➜  kubectl run nginx --image=nginx
 pod/nginx create
@@ -68,12 +69,12 @@ nginx   1/1     Running   0          56s
 ```
 
 ## 5. To delete a pod
-if pod is mislunched in a wrong namespace or anything, we can delete as 
+if pod is in a wrong namespace or anything issue, we can delete as 
 ```sh
 kubectl delete pod <pod_name>
 ```
 Example
-```sh
+```
 # let check if our pod is properly lunched under a required namespace if not delete
 ➜  kubectl get pods -n nginx
 No resources found in nginx namespace.
@@ -83,7 +84,22 @@ No resources found in nginx namespace.
 pod "nginx" deleted
 ```
 
+## 6. Lunch a pod under a certain namespace
+```sh
+kubectl run <container/pod_name> --image=<pod_container_image> -n <namespace_name>
+```
+Example
+```
+➜  kubectl run nginx --image=nginx -n nginx
+Error from server (NotFound): namespaces "nginx" not found
 
+➜  kubectl create namespace nginx
+namespace/nginx created
+
+➜  kubectl run nginx --image=nginx -n nginx
+pod/nginx created
+
+```
 
 
 
