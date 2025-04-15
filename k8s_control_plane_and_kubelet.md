@@ -6,7 +6,14 @@ This gives the detail information about namespaces
 kubectl get ns
 # or
 kubectl get namespaces
+
+# create
+kubectl create namespace <name_of_namespace>
+
+# delete
+kubectl delete namespace <name_of_namespace>
 ```
+
 Result:
 ```
 ➜  kubectl get namespaces
